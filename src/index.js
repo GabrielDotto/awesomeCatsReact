@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Provider } from "react-redux";
+import store from "./redux/store";
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import HomeApp  from './HomeApp';
+
+const rootElement =  document.getElementById('root');
 ReactDOM.render(
   <Provider store={store}>
-    <TodoApp />
+    <HomeApp />
   </Provider>,
   rootElement
 )

@@ -1,0 +1,19 @@
+import React from "react";
+import MenuApp from "./components/menuApp/MenuApp";
+import "./index.css";
+
+function HomeApp() {
+  return (
+    <div className="home-app">
+        <div className="menu-app">
+            <MenuApp />
+        </div>
+        <div className="body-home-app">
+            {/* <Cabecalho />
+            <BreedSearcher /> */}
+        </div>
+    </div>
+  );
+}
+
+export default HomeApp;
