@@ -3,18 +3,47 @@
     display: flex;
     flex: 1 1 auto;
     padding: 5%;
-    color:white;
+    color: #ABBCD0;;
     flex-direction: column;
+}
+
+h1 {
+    color:white;
 }
 
 .menu-title {
     display: flex;
-    flex: 0 1 20%;
+    flex: 0 1 13%;
     border-bottom: 3px dotted rgba(255,255,255, 0.2);
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .menu-options { 
     display: flex;
     flex: 1 1 100%;
     padding-top: 10%;
+    flex-direction: column;
+    color: #ABBCD0;
+}
+
+.menu-item {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    font-size: 20px;  
+    max-height: 40px;
+} 
+
+.selected { 
+    color: white;
+}
+
+span {
+    padding-left: 20px;
+}
+
+i {
+    position: relative;
+    top: 5px;
 }

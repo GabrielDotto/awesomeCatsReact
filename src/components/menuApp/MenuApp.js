@@ -14,14 +14,18 @@ class MenuApp extends React.Component {
         return (
             <div className="menuStyles" >
                 <div className="menu-title">
-                    <h1>HostGatos</h1>
+                        <h1>HostGatos</h1>
+                        <i className="fas fa-chevron-left"></i>
                 </div>
                 <div className="menu-options">
-                    <div>
-                        <i class="fas fa-paw"> <p>Breeds</p></i>
-                        
+                    <div className="menu-item selected">
+                        <i className="fas fa-paw"> </i>
+                        <span>Breeds</span>
                     </div>
-                    <div></div>
+                    <div className="menu-item">
+                        <i className="far fa-comment-alt"></i>
+                        <span>Feedback</span>
+                    </div>
                 </div>
                 
             </div>

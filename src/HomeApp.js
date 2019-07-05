@@ -1,5 +1,6 @@
 import React from "react";
 import MenuApp from "./components/menuApp/MenuApp";
+import Cabecalho from "./components/cabecalho/Cabecalho";
 import "./index.css";
 
 function HomeApp() {
@@ -9,8 +10,8 @@ function HomeApp() {
             <MenuApp />
         </div>
         <div className="body-home-app">
-            {/* <Cabecalho />
-            <BreedSearcher /> */}
+            <Cabecalho />
+            {/* <BreedSearcher /> */}
         </div>
     </div>
   );
