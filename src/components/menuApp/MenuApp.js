@@ -3,17 +3,11 @@ import "./MenuApp.css";
 
 
 class MenuApp extends React.Component {
-    // constructor(props) {
-    //     super(props);
-
-        // this.state = { input: "" };
-    // }
-
 
     render() { 
         return (
             <div className="menuStyles" >
-                <div className="menu-title">
+                <div className="menu-title bottom-dotted-border">
                         <h1>HostGatos</h1>
                         <i className="fas fa-chevron-left"></i>
                 </div>

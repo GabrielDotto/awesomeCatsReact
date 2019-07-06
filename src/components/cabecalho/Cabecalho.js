@@ -5,12 +5,6 @@ import avatar from '../../assets/avatar.png';
 
 
 class Cabecalho extends React.Component {
-    // constructor(props) {
-    //     super(props);
-
-        // this.state = { input: "" };
-    // }
-
 
     render() { 
         return (

@@ -14,7 +14,6 @@ h1 {
 .menu-title {
     display: flex;
     flex: 0 1 13%;
-    border-bottom: 3px dotted rgba(255,255,255, 0.2);
     flex-direction: row;
     justify-content: space-between;
 }
