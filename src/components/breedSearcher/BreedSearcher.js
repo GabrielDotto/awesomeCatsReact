@@ -2,28 +2,40 @@ import React from 'react';
 import "./BreedSearcher.css";
 import "../../index.css";
 
-
-class BreedSearcher extends React.Component {
-    // constructor(props) {
-    //     super(props);
-
-        // this.state = { input: "" };
-    // }
+import { connect } from 'react-redux';
+ 
+import * as BreedAction from '../../redux/actions/breeds';
+import { bindActionCreators } from 'redux';
 
 
-    render() { 
-        return (
-            <div className="breed-searcher"> 
-                <div className="header-breed-searcher bottom-dotted-border">
+let inputValue = "";
 
-                </div>
-                <div>
-
-                </div>
-            </div>
-        );
-    }
+const input = (value) => {
+    inputValue = value;
 }
 
+const BreedSearcher = ( { breeds, getBreeds } ) => (
+    <div className="breed-searcher"> 
+        <div className="header-breed-searcher bottom-dotted-border">
+            <div className="input-search"> 
+                <form className="form-search" onSubmit={(e) => { e.preventDefault();  getBreeds(inputValue)}}>
+                    <label> Search the breed:
+                        <input type="text" onChange={(e) => input(e.target.value)}/>
+                    </label>
+                </form>
+            </div>
+        </div>
+        <div>
+            <h1>{breeds.length}</h1>
+            <p>testes</p>
+        </div>
+    </div>
+);
 
-export default BreedSearcher;
+const mapStateToProps = state => ({ 
+    breeds: state.breeds.breeds
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators(BreedAction, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(BreedSearcher);

@@ -1,16 +1,21 @@
-import { SET_BREEDS_SEARCHED } from "../actionTypes";
+import { SET_BREEDS_SEARCHED } from "../actions/actionTypes";
 
 const initialState = {
-  breeds: [],
+  breeds: [{id: 1, cat: "doidao"}],
 };
 
-export default function(state = initialState, action) {
+export default function breeds(state = initialState, action) {
+  
+  console.log("teste REDUCER", state);
+  console.log("teste ACTION", action.payload);
+
   switch (action.type) {
     case SET_BREEDS_SEARCHED: {
-      const { content } = action.payload;
+      const  content  = action.payload;
+      console.log("entrou no set breeds", content);
       return {
         ...state,
-        breeds: content,
+        breeds: {...breeds, content},
       };
     }
     default:
