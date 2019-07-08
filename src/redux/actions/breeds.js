@@ -7,6 +7,8 @@ const DEFAULT_HEADERS =  {
     headers: {'x-api-key': "4280a662-af70-43f2-a2ba-2e75d4c0d76d"},
 }
 
+//TODO: Abstrair método fetch para outro arquivo.
+
 export const getBreedsSuccess = (breedsResult) => {
     return {
         type: GET_BREEDS_SUCCESS,

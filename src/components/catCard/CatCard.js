@@ -18,16 +18,14 @@ const addStarInfos = (number, label) => {
     return star;
 }
 
-
-// const catImage = (cat) => {
-//     console.log("TESTE IMAGEM", cat.url);
-//         return     
-// };
-
-
 class CatCard extends React.Component {
-    
-    componentWillMount() {
+    componentDidUpdate(prev) {
+        if(prev.cat.id !== this.props.cat.id){
+            this.props.dispatch(BreedAction.getImage(this.props.cat.id));
+        }
+    }
+
+    componentDidMount() {
         this.props.dispatch(BreedAction.getImage(this.props.cat.id));
     }
 
@@ -36,8 +34,7 @@ class CatCard extends React.Component {
     return <div className="cat-card">
         <div className="cat-content">
             <div>
-                <img src={this.props.cat.url} alt=""/>
-                {/* {catImage(this.props.cat)} */}
+                <img src={this.props.imgCat} alt=""/>
             </div>
             <div className="infos-breed">
                 <div className="cat-header">
@@ -66,10 +63,8 @@ class CatCard extends React.Component {
 };
 
 
-// const mapStateToProps = state => ({ 
-//     thisCat: state.breeds.breeds
-// });
+const mapStateToProps = state => ({ 
+    imgCat: state.breeds.activeCatImage
+});
 
-// const mapDispatchToProps = dispatch => bindActionCreators(BreedAction, dispatch);
-
-export default connect(null, null)(CatCard);
+export default connect(mapStateToProps, null)(CatCard);

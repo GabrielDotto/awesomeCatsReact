@@ -21,7 +21,7 @@ const showBreed = (breeds) => {
 const addButtonLoad = (breeds) => {
     return breeds.length > 1 
         ?   <div className="footer-card">
-                <button className="button-large ligthGrey" >LOAD MORE</button>
+                <button className="button-large ligthGrey" title="NÃO IMPLEMENTADO" >LOAD MORE</button>
             </div>
         : null;
 }
