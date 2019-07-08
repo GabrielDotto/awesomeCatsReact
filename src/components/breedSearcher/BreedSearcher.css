@@ -54,6 +54,24 @@ label {
     align-items: center;
 }
 
-.lengh { 
-    color:black;
+.result-search-title { 
+    display: flex;
+    flex: 0 1 auto;
+    justify-content: center;
+    padding: 1rem 0;
+    font-weight: 400;
+}
+.result-title { 
+    color:#C3C8CB;
+}
+
+.results-search-content {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.breed-body-result {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
 }

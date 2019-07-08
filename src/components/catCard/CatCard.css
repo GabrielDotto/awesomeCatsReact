@@ -1,0 +1,59 @@
+.cat-card { 
+    color: #4A4A4A !important;
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+}
+
+img {
+    max-width: 200px;
+}
+
+.cat-header {
+    font-family: Segoe UI;
+}
+.cat-content { 
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+}
+
+.infos-breed { 
+    padding-left: 15px;
+}
+
+.status-breed {
+    padding-top: 1rem;
+    display: flex;
+}
+
+.label-stars {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-stars > p  {
+    margin: 0.5rem;
+}
+
+
+.starIcon {
+    flex-direction: column;
+    display: flex;
+    font-size: 18px;
+    position: relative;
+    top: -5px;
+}
+
+.starIcon > div {
+    margin: 0.4rem;
+}
+
+.fas, .far {
+    padding: 0 0.2rem;
+}
+
+.footer-card {
+    display: flex;
+    justify-content: center;
+}

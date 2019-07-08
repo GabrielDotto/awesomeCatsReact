@@ -8,11 +8,10 @@ export default function breeds(state = initialState, action) {
   
   switch (action.type) {
     case GET_BREEDS_SUCCESS: {
-      const  content  = action.payload;
       console.log("REDUCER SUCCESS", action.payload);
       return {
         ...state,
-        breeds:  content,
+        breeds: action.payload
       };
     }
     case GET_BREEDS_FAILURE: {

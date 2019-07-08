@@ -44,3 +44,39 @@ code {
 .bottom-dotted-border { 
   border-bottom: 3px dotted rgba(	230, 235, 239, 0.7);
 }
+
+.no-margin {
+  margin: 0;
+}
+
+.greenColor { 
+  color: #40B186;
+}
+
+.ligthGrey {
+  color: #C3C8CB;
+}
+
+.margin-3em { 
+  margin: 0.3em;
+}
+
+.fa-star { 
+  border-color: red;
+}
+
+.button-large { 
+  width: 140px;
+  height: 35px;
+  font-weight: bold;
+  background: white;
+  border: 1px solid #C3C8CB;
+  color: #4a4a4adb;
+  border-radius: 4px;
+}
+
+.button-large:hover { 
+  border: 2px solid #C3C8CB;
+  /* font-weight: 900; */
+  box-shadow:3px 3px 8px -4px black;
+}

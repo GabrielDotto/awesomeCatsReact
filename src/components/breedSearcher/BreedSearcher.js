@@ -1,7 +1,7 @@
 import React from 'react';
 import "./BreedSearcher.css";
 import "../../index.css";
-
+import CatCard from "../catCard/CatCard";
 import { connect } from 'react-redux';
  
 import * as BreedAction from '../../redux/actions/breeds';
@@ -12,6 +12,10 @@ let inputValue = "";
 
 const input = (value) => {
     inputValue = value;
+}
+
+const showBreed = (breeds) => {
+    return breeds.length > 0 && <CatCard cat={breeds[0]} />;
 }
 
 const BreedSearcher = ( { breeds, getBreeds } ) => (
@@ -25,9 +29,13 @@ const BreedSearcher = ( { breeds, getBreeds } ) => (
                 </form>
             </div>
         </div>
-        <div>
-            <h1 className="lengh">{breeds.length}</h1>
-            <p>testes</p>
+        <div className="breed-body-result">
+            <div className="result-search-title">
+                <span className="result-title"> {`${breeds.length} result found`}</span>
+            </div>
+            <div className="results-search-content">
+                {showBreed(breeds)}
+            </div>
         </div>
     </div>
 );
