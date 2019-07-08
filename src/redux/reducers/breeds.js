@@ -1,4 +1,9 @@
-import { GET_BREEDS_SUCCESS, GET_BREEDS_FAILURE } from "../actions/actionTypes";
+import {
+   GET_BREEDS_SUCCESS,
+   GET_BREEDS_FAILURE,
+   GET_IMAGE_SUCCESS,
+   GET_IMAGE_FAILURE
+  } from "../actions/actionTypes";
 
 const initialState = {
   breeds: [],
@@ -19,6 +24,22 @@ export default function breeds(state = initialState, action) {
       return { 
         ...state,
         breeds: []
+      }
+    }
+    case GET_IMAGE_SUCCESS: {
+      let catBreed = state.breeds.find( breed => breed.id === action.idCat);
+      catBreed.url = action.urlImage;
+      console.log("state", state);
+      return {
+        ...state,
+        breeds: state.breeds
+      }
+    }
+    case GET_IMAGE_FAILURE: {
+      console.log("IMAGE FAILURE");
+      // Toast / mensagem ???
+      return {
+        state
       }
     }
     default:

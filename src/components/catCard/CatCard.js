@@ -2,6 +2,8 @@ import React from 'react';
 import "./CatCard.css";
 import "../../index.css";
 import { connect } from 'react-redux';
+ 
+import * as BreedAction from '../../redux/actions/breeds';
 
 
 const addStarInfos = (number, label) => {
@@ -17,29 +19,30 @@ const addStarInfos = (number, label) => {
 }
 
 
-// const catImage = (idCat) => {
-
-//     let catImageUrl = "";
-//         fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${idCat}`, { 
-//             crossDomain: true,
-//             headers: {'x-api-key': "4280a662-af70-43f2-a2ba-2e75d4c0d76d"}
-//         })
-//         .then(response => response.json())
-//         .then(data => catImageUrl = data[0].url)
-//         .catch(err => alert("Erro ao recuperar iamgem do cat"));
+// const catImage = (cat) => {
+//     console.log("TESTE IMAGEM", cat.url);
+//         return     
 // };
 
 
-const CatCard = ({cat}) => (
-    <div className="cat-card">
+class CatCard extends React.Component {
+    
+    componentWillMount() {
+        this.props.dispatch(BreedAction.getImage(this.props.cat.id));
+    }
+
+
+    render () {
+    return <div className="cat-card">
         <div className="cat-content">
             <div>
-                {/* <img src={catImage(cat.id)} alt={catImage(cat.id)}/> */}
+                <img src={this.props.cat.url} alt=""/>
+                {/* {catImage(this.props.cat)} */}
             </div>
             <div className="infos-breed">
                 <div className="cat-header">
-                    <p className="no-margin"><b>{cat.name}</b></p>
-                    <p className="no-margin">{cat.description}</p>
+                    <p className="no-margin"><b>{this.props.cat.name}</b></p>
+                    <p className="no-margin">{this.props.cat.description}</p>
                 </div>
                 <div className="status-breed">
                     <div className="label-stars">
@@ -49,24 +52,24 @@ const CatCard = ({cat}) => (
                         <p>Dog Friendly </p>    
                     </div>
                     <div className="starIcon">
-                        <div> {addStarInfos(cat.affection_level, "affection")}</div>
-                        <div >{addStarInfos(cat.adaptability , "adaptability")}</div>
-                        <div >{addStarInfos(cat.child_friendly, "childFriendly")}</div>
-                        <div >{addStarInfos(cat.dog_friendly, "dogFriendly")}</div>
+                        <div> {addStarInfos(this.props.cat.affection_level, "affection")}</div>
+                        <div >{addStarInfos(this.props.cat.adaptability , "adaptability")}</div>
+                        <div >{addStarInfos(this.props.cat.child_friendly, "childFriendly")}</div>
+                        <div >{addStarInfos(this.props.cat.dog_friendly, "dogFriendly")}</div>
                     </div>
                 </div>
             </div>
         </div>
-        {console.log("CATCARD", cat)}
-        <div className="footer-card">
-            <button className="button-large ligthGrey">LOAD MORE</button>
-        </div>
+        
     </div>
-);
+    }
+};
+
 
 // const mapStateToProps = state => ({ 
-    
+//     thisCat: state.breeds.breeds
 // });
+
 // const mapDispatchToProps = dispatch => bindActionCreators(BreedAction, dispatch);
 
 export default connect(null, null)(CatCard);

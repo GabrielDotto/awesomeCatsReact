@@ -36,7 +36,6 @@ img {
     margin: 0.5rem;
 }
 
-
 .starIcon {
     flex-direction: column;
     display: flex;
@@ -51,9 +50,4 @@ img {
 
 .fas, .far {
     padding: 0 0.2rem;
-}
-
-.footer-card {
-    display: flex;
-    justify-content: center;
 }

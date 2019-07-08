@@ -18,6 +18,15 @@ const showBreed = (breeds) => {
     return breeds.length > 0 && <CatCard cat={breeds[0]} />;
 }
 
+const addButtonLoad = (breeds) => {
+    return breeds.length > 1 
+        ?   <div className="footer-card">
+                <button className="button-large ligthGrey" >LOAD MORE</button>
+            </div>
+        : null;
+}
+
+
 const BreedSearcher = ( { breeds, getBreeds } ) => (
     <div className="breed-searcher"> 
         <div className="header-breed-searcher bottom-dotted-border">
@@ -36,6 +45,7 @@ const BreedSearcher = ( { breeds, getBreeds } ) => (
             <div className="results-search-content">
                 {showBreed(breeds)}
             </div>
+            {addButtonLoad(breeds)}
         </div>
     </div>
 );

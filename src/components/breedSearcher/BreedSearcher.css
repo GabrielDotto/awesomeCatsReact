@@ -75,3 +75,8 @@ label {
     flex-direction: column;
     flex: 1 1 auto;
 }
+
+.footer-card {
+    display: flex;
+    justify-content: center;
+}
