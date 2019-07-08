@@ -18,7 +18,7 @@ const BreedSearcher = ( { breeds, getBreeds } ) => (
     <div className="breed-searcher"> 
         <div className="header-breed-searcher bottom-dotted-border">
             <div className="input-search"> 
-                <form className="form-search" onSubmit={(e) => { e.preventDefault();  getBreeds(inputValue)}}>
+                <form className="form-search" onSubmit={(e) => { e.preventDefault();  getBreeds(inputValue)} }>
                     <label> Search the breed:
                         <input type="text" onChange={(e) => input(e.target.value)}/>
                     </label>
@@ -26,7 +26,7 @@ const BreedSearcher = ( { breeds, getBreeds } ) => (
             </div>
         </div>
         <div>
-            <h1>{breeds.length}</h1>
+            <h1 className="lengh">{breeds.length}</h1>
             <p>testes</p>
         </div>
     </div>

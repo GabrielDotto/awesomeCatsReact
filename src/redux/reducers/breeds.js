@@ -1,22 +1,26 @@
-import { GET_BREEDS_SEARCHED } from "../actions/actionTypes";
+import { GET_BREEDS_SUCCESS, GET_BREEDS_FAILURE } from "../actions/actionTypes";
 
 const initialState = {
-  breeds: [{id: 1, cat: "doidao"}],
+  breeds: [],
 };
 
 export default function breeds(state = initialState, action) {
   
-  console.log("teste REDUCER", state);
-  console.log("teste ACTION", action.payload);
-
   switch (action.type) {
-    case GET_BREEDS_SEARCHED: {
+    case GET_BREEDS_SUCCESS: {
       const  content  = action.payload;
-      console.log("entrou no set breeds", content);
+      console.log("REDUCER SUCCESS", action.payload);
       return {
         ...state,
-        breeds: {...breeds, content},
+        breeds:  content,
       };
+    }
+    case GET_BREEDS_FAILURE: {
+      console.log("BREEDS FAILURE");
+      return { 
+        ...state,
+        breeds: []
+      }
     }
     default:
       return state;
